@@ -15,6 +15,9 @@ var Webfaction = function(username, password) {
     params.unshift(this.session_id);
     console.log(params);
     client.methodCall(method, params, (function (error, value) {
+      if (error) {
+        console.log(error);
+      }
       callback(value);
   }).bind(this));
   };
@@ -26,15 +29,26 @@ Webfaction.prototype.login = function(callback) {
     this.account = value[1];
     callback(value);
   }).bind(this));
-};  
+};
 
+/*
+ * Domains
+ */
 Webfaction.prototype.createDomain = function(domain, subdomain, callback) {
   this.methodCall('create_domain', [domain, subdomain], callback);
   };
 
+Webfaction.prototype.deleteDomain = function(domain, subdomain, callback) {
+  this.methodCall('delete_domain', [], callback);
+};
+
 Webfaction.prototype.listDomains = function(callback) {  
   this.methodCall('list_domains', [], callback);
 };
+
+/*
+ * Applications
+ */
 
 Webfaction.prototype.createApp = function(appName, appType) {
   client.methodCall('create_app', [this.session_id, appName, appType], function (error, value) {
@@ -48,34 +62,39 @@ Webfaction.prototype.createApp = function(appName, appType) {
   });
 };
 
+/*
+ * Websites
+ */
 
-var webfaction = new Webfaction('');
+Webfaction.prototype.listWebsites = function(callback) {  
+  this.methodCall('list_websites', [], callback);
+};
+
+/*
+ * Email
+ */
+
+/*
+ * Misc
+ */
+
+Webfaction.prototype.listIps = function(callback) {  
+  this.methodCall('list_ips', [], callback);
+}; 
+
+
+var webfaction = new Webfaction();
 
 webfaction.login(function(result) {
   
   console.log(result);
+
   
-  webfaction.createDomain('farnaby.webfactional.com', 'apitest3', function(result) {
+  webfaction.listIps(function(result){
     console.log(result);
   });
 
 });
-
-
-/*
-async.series([
-  function(callback) {
-    webfaction.login(callback);
-  },
-  //function(callback) {
-    //webfaction.createDomain('farnaby.webfactional.com', 'apitest2', callback);
-  //},
-  function(callback) {
-    webfaction.listDomains(callback)
-  }
-  ]);
-
-*/
 
 
 
