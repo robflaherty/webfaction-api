@@ -19,8 +19,12 @@ webfaction.login(function(result) {
 ## API
 
 ### General
+#### login(callback)
 
 ### Domains
+#### createDomain(domain, callback)
+#### deleteDomain(subdomain, callback)
+#### listDomains(callback)
 
 ### Applications
 
