@@ -1,6 +1,6 @@
 # Webfaction API
 
-This is a Node.js wrapper for Webfaction's XML-RPC API. It's very incomplete right now. Not ready for primetime use!
+This is a Node.js wrapper for Webfaction's XML-RPC API. It's currently very incomplete—not ready for primetime use!
 
 ## Basic Usage
 
