@@ -22,8 +22,8 @@ webfaction.login(function(result) {
 #### login(callback)
 
 ### Domains
-#### createDomain(domain, callback)
-#### deleteDomain(subdomain, callback)
+#### createDomain(domain, subdomain, callback)
+#### deleteDomain(domain, subdomain, callback)
 #### listDomains(callback)
 
 ### Applications
