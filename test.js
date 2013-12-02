@@ -1,7 +1,7 @@
 var Webfaction = require('./lib/webfaction');
 
 var webfaction = new Webfaction();
-
+/*
 webfaction.login(function(result) {
   
   //console.log(result);
@@ -13,10 +13,10 @@ webfaction.login(function(result) {
       console.log(result);
     });
 
-  /*
   webfaction.listMachines(function(result){
     console.log(result);
   });
-  */
 
 });
+
+  */
