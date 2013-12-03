@@ -1,22 +1,16 @@
 var Webfaction = require('./lib/webfaction');
 
-var webfaction = new Webfaction();
-/*
+var webfaction = new Webfaction('USERNAME', 'PASSWORD');
+
 webfaction.login(function(result) {
   
-  //console.log(result);
-  
-  webfaction.createApp({
-    name: 'foofoo6',
-    type: 'static_only'
-    }, function(result) {
-      console.log(result);
-    });
+  webfaction.listApps(function(result) {
+    console.log(result);
+  });
 
-  webfaction.listMachines(function(result){
+  webfaction.createDomain('example.com', 'www', function(result) {
     console.log(result);
   });
 
 });
 
-  */
