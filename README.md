@@ -1,6 +1,8 @@
 # Webfaction API
 
-This is a Node.js wrapper for Webfaction's XML-RPC API. It's currently very incomplete—not ready for primetime use!
+This is a Node.js wrapper for Webfaction's [XML-RPC API](http://docs.webfaction.com/xmlrpc-api/). It's currently incomplete but functional for the parts of the API it supports (listed below). Use at your own risk. Be careful with destructive operations.
+
+It needs tests, better error handling, and coverage for the other sections of the API (email, DNS, etc). Contributions welcome!
 
 ## Basic Usage
 
@@ -53,5 +55,3 @@ webfaction.login(function(result) {
 * Cron
     * Create Cron job
     * Delete Cron job
-
-
