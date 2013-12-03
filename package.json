@@ -1,0 +1,27 @@
+{
+  "name": "webfaction-api",
+  "version": "0.1.1",
+  "description": "Node.js wrapper for Webfaction XML-RPC API",
+  "main": "lib/webfaction.js",
+  "homepage" : "https://github.com/robflaherty/webfaction-api/",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "xmlrpc": "~1.1.1",
+    "underscore": "~1.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/robflaherty/webfaction-api.git"
+  },
+  "keywords": [
+    "webfaction",
+    "xml-rpc"
+  ],
+  "author": "Rob Flaherty",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/robflaherty/webfaction-api/issues"
+  }
+}
