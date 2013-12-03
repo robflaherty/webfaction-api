@@ -10,31 +10,48 @@ var Webfaction = require('./lib/webfaction');
 var webfaction = new Webfaction('username', 'password');
 
 webfaction.login(function(result) {
-  webfaction.listMachines(function(result) {
+  
+  webfaction.listDomains(function(result) {
     console.log(result);
   });
+
+  webfaction.createWebsite({
+    website_name : 'example',
+    ip: '123.45.67.89',
+    https: false,
+    subdomains: ['www.example.com'],
+    site_apps: [ ['node', '/'] ]
+  },
+  function(result) {
+    console.log(result);
+  });
+
 });
 ```
 
 ## API
 
-### General
-#### login(callback)
+### Supported API Calls
 
-### Domains
-#### createDomain(domain, subdomain, callback)
-#### deleteDomain(domain, subdomain, callback)
-#### listDomains(callback)
-
-### Applications
-
-### Websites
-
-### Cron
-
-### Servers
-
-### Email
-
+* Domains
+    * Create Domain
+    * Delete Domain
+    * List Domains
+* Applications
+    * Create Application
+    * Delete Application
+    * List Applications
+    * List Application Types
+* Websites
+    * Create Website
+    * Update Website
+    * Delete Website
+    * List Websites
+* Servers
+    * List IPs
+    * List Machines
+* Cron
+    * Create Cron job
+    * Delete Cron job
 
 
