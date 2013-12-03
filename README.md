@@ -4,10 +4,15 @@ This is a Node.js wrapper for Webfaction's [XML-RPC API](http://docs.webfaction.
 
 It needs tests, better error handling, and coverage for the other sections of the API (email, DNS, etc). Contributions welcome!
 
+## Installation
+```
+npm install webfaction-api
+```
+
 ## Basic Usage
 
 ```javascript
-var Webfaction = require('./lib/webfaction');
+var Webfaction = require('webfaction-api');
 
 var webfaction = new Webfaction('username', 'password');
 
